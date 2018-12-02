@@ -1,0 +1,399 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Сдесь задавать ширину редактора */
+.iframe-container {
+    height: 225px;
+}
+
+.web-editor {
+    position: relative;
+    width: 100%;
+    min-width: 280px;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    border: 2px solid #61101059;
+}
+
+.web-editor .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.web-editor .column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-flex: 1;
+    -ms-flex: auto;
+    flex: auto;
+}
+
+.web-editor .panels-wrapper {
+    padding: 4px;
+    background-color: #cfcfcf;
+}
+
+.web-editor .tools-panel {
+    padding: 3px 4px;
+}
+
+.web-editor .tool-button {
+    display: block;
+    width: 30px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0px 6px;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    border: 1px solid #ffffff;
+    border-right: 1px solid #5b8d51;
+    background-color: #fcfcfc;
+    background-repeat: no-repeat;
+    background-size: 26px;
+    background-position: center center;
+}
+
+.web-editor .tool-button:last-child {
+    border-right: 0px solid #000;
+}
+
+.web-editor .tool-button:hover {
+    background-color: #696969;
+    color: #ffffff;
+}
+
+.web-editor .tool-button.active {
+    background-color: #b8b8b8;
+    color: #ffffff;
+}
+
+.web-editor .iframe-container {
+    width: 100%;
+}
+
+.web-editor iframe[name="entry-field"] {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.web-editor .tags {
+    padding: 5px;
+    background-color: #cfcfcf;
+    font-family: sans-serif;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.web-editor .tag {
+    background-color: inherit;
+    color: #222222;
+    padding: 3px 5px;
+    border-radius: 3px;
+    margin-right: 1px;
+    font-size: 15px;
+    border: 1px solid #00000000;
+}
+
+.web-editor .tag:hover {
+    background-color: #afafaf;
+    color: #000000;
+    border-color: #cfcfcf;
+    text-decoration: underline;
+}
+
+/* Панель 1 */
+
+.web-editor .tool-button[data-command-name="bold"] {
+    font-weight: bold;
+}
+
+.web-editor .tool-button[data-command-name="italic"] {
+    font-style: italic;
+    font-family: serif;
+}
+
+.web-editor .tool-button[data-command-name="underline"] {
+    text-decoration: underline;
+}
+
+.web-editor .tool-button[data-command-name="strikeThrough"] {
+    text-decoration: line-through;
+}
+
+.web-editor .tool-button[data-command-name="superscript"] {
+    line-height: 17px;
+}
+
+.web-editor .tool-button[data-command-name="removeFormat"] {
+    text-decoration: underline;
+}
+
+/* Панель 2 */
+.web-editor .tool-button[data-command-name="insertOrderedList"] {
+    background-image: url('numbered_list.png');
+}
+
+.web-editor .tool-button[data-command-name="insertUnorderedList"] {
+    background-image: url('bulleted_list.png');
+}
+
+.web-editor .tool-button[data-command-name="outdent"] {
+    background-image: url('outdent.png');
+}
+
+.web-editor .tool-button[data-command-name="indent"] {
+    background-image: url('indent.png');
+}
+
+.web-editor .tool-button[title="Цитата"] {
+    background-image: url('quote.png');
+}
+
+.web-editor .tool-button[data-command-name="justifyLeft"] {
+    background-image: url('align_to_left.png');
+}
+
+.web-editor .tool-button[data-command-name="justifyCenter"] {
+    background-image: url('align_to_center.png');
+}
+
+.web-editor .tool-button[data-command-name="justifyRight"] {
+    background-image: url('right_align.png');
+}
+
+.web-editor .tool-button[data-command-name="justifyFull"] {
+    background-image: url('align_at_both_ends.png');
+}
+
+/***********************************************/
+
+.web-editor select {
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid #ffffff;
+    padding: 0px 6px;
+    background-color: #fcfcfc;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+#header-select option {
+    font-weight: bold;
+    line-height: 130%;
+}
+
+.web-editor option[value="H1"] {
+    font-size: 32px;
+}
+
+.web-editor option[value="H2"] {
+    font-size: 24px;
+}
+
+.web-editor option[value="H3"] {
+    font-size: 19px;
+}
+
+.web-editor option[value="H4"] {
+    font-size: 16px;
+}
+
+.web-editor option[value="H5"] {
+    font-size: 13px;
+}
+
+.web-editor option[value="H6"] {
+    font-size: 11px;
+}
+
+/* FONT-NAME-SELECT */
+
+.web-editor option[value="Comic Sans MS"] {
+    font-family: "Comic Sans MS";
+}
+
+.web-editor option[value="Courier New"] {
+    font-family: "Courier New";
+}
+
+.web-editor option[value="Georgia"] {
+    font-family: "Georgia";
+}
+
+.web-editor option[value="Lucida Sans Unicode"] {
+    font-family: "Lucida Sans Unicode";
+}
+
+.web-editor option[value="Tahoma"] {
+    font-family: "Tahoma";
+}
+
+.web-editor option[value="Times New Roman"] {
+    font-family: "Times New Roman";
+}
+
+.web-editor option[value="Trebuchet MS"] {
+    font-family: "Trebuchet MS";
+}
+
+.web-editor option[value="Verdana"] {
+    font-family: "Verdana";
+}
+
+/* Панель цвета */
+
+.web-editor span[data-command-name="foreColor"] {
+    background-image: url("fore_сolor.png");
+}
+
+/*span[data-command-name="hiliteColor"]{
+    background-image: url("fore_сolor.png");
+}*/
+
+/* Спойлер */
+
+.web-editor .spoiler {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 10px 20px;
+}
+
+.web-editor .spoiler-title {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 3px;
+}
+
+.web-editor .spoiler-wrapper {
+    padding: 8px;
+    border: 1px solid #353535;
+}
+
+.web-editor .spoiler-wrapper.hide {
+    display: none;
+}
+
+.web-editor .spoiler-text {
+    margin: 0px;
+}
+
+/* Цитата */
+
+.web-editor .quote {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border: 2px solid #491010;
+    border-radius: 6px;
+    margin: 10px 20px;
+}
+
+.web-editor .quote-title {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 3px;
+    background-color: #bdbdbd;
+}
+
+.web-editor .quote-wrapper {
+    padding: 8px;
+    background-color: #e4e4e4;
+}
+
+.web-editor .quote-text {
+    margin: 0px;
+}
+
+/* Модальное окно */
+
+.web-editor .select-color-window {
+    position: absolute;
+    width: 180px;
+    height: auto;
+    border: 1px solid #696969;
+    background-color: #ffffff;
+}
+
+.web-editor .select-color-window.hide {
+    display: none;
+}
+
+.web-editor .select-color-window .row {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 3px 5px;
+}
+
+.web-editor .select-color-window .row.default {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+.web-editor .select-color-window .row .column {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.web-editor .select-color-window .color {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    width: 14px;
+    height: 14px;
+    background-color: #353535;
+    margin: 3px;
+    border: 1px solid #696969;
+    background-color: attr(data-color-hex color);
+}
+
+.web-editor .select-color-window .color:hover {
+    -webkit-box-shadow: 0px 0px 5px #353535;
+    box-shadow: 0px 0px 5px #353535;
+}
+
+.web-editor .select-color-window .row.default span {
+    margin-left: 8px;
+    font-family: sans-serif;
+    font-size: 14px;
+}
