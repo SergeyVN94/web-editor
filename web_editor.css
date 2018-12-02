@@ -154,39 +154,39 @@
 
 /* Панель 2 */
 .web-editor .tool-button[data-command-name="insertOrderedList"] {
-    background-image: url('numbered_list.png');
+    background-image: url('images/icons/numbered_list.png');
 }
 
 .web-editor .tool-button[data-command-name="insertUnorderedList"] {
-    background-image: url('bulleted_list.png');
+    background-image: url('images/icons/bulleted_list.png');
 }
 
 .web-editor .tool-button[data-command-name="outdent"] {
-    background-image: url('outdent.png');
+    background-image: url('images/icons/outdent.png');
 }
 
 .web-editor .tool-button[data-command-name="indent"] {
-    background-image: url('indent.png');
+    background-image: url('images/icons/indent.png');
 }
 
 .web-editor .tool-button[title="Цитата"] {
-    background-image: url('quote.png');
+    background-image: url('images/icons/quote.png');
 }
 
 .web-editor .tool-button[data-command-name="justifyLeft"] {
-    background-image: url('align_to_left.png');
+    background-image: url('images/icons/align_to_left.png');
 }
 
 .web-editor .tool-button[data-command-name="justifyCenter"] {
-    background-image: url('align_to_center.png');
+    background-image: url('images/icons/align_to_center.png');
 }
 
 .web-editor .tool-button[data-command-name="justifyRight"] {
-    background-image: url('right_align.png');
+    background-image: url('images/icons/right_align.png');
 }
 
 .web-editor .tool-button[data-command-name="justifyFull"] {
-    background-image: url('align_at_both_ends.png');
+    background-image: url('images/icons/align_at_both_ends.png');
 }
 
 /***********************************************/
@@ -267,11 +267,11 @@
 /* Панель цвета */
 
 .web-editor span[data-command-name="foreColor"] {
-    background-image: url("fore_сolor.png");
+    background-image: url("images/icons/fore_сolor.png");
 }
 
 /*span[data-command-name="hiliteColor"]{
-    background-image: url("fore_сolor.png");
+    background-image: url("images/icons/fore_сolor.png");
 }*/
 
 /* Спойлер */
