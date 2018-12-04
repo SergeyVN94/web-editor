@@ -347,9 +347,10 @@
     height: auto;
     border: 1px solid #696969;
     background-color: #ffffff;
+    font-family: sans-serif;
 }
 
-.web-editor .select-color-window.hide {
+.web-editor .modal-window.hide {
     display: none;
 }
 
@@ -363,10 +364,15 @@
     padding: 3px 5px;
 }
 
-.web-editor .select-color-window .row.default {
+.web-editor .select-color-window .row.head {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
+    padding-bottom: 0;
+}
+
+.web-editor .select-color-window .row.head .color-select-btn {
+    margin-right: 8px;
 }
 
 .web-editor .select-color-window .row .column {
@@ -375,25 +381,19 @@
     justify-content: space-between;
 }
 
-.web-editor .select-color-window .color {
+.web-editor .select-color-window .color-select-btn {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
-    width: 14px;
-    height: 14px;
+    width: 15px;
+    height: 15px;
     background-color: #353535;
-    margin: 3px;
+    margin: 2px;
     border: 1px solid #696969;
     background-color: attr(data-color-hex color);
 }
 
-.web-editor .select-color-window .color:hover {
+.web-editor .select-color-window .color-select-btn:hover {
     -webkit-box-shadow: 0px 0px 5px #353535;
     box-shadow: 0px 0px 5px #353535;
-}
-
-.web-editor .select-color-window .row.default span {
-    margin-left: 8px;
-    font-family: sans-serif;
-    font-size: 14px;
 }
