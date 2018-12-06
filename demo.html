@@ -8,7 +8,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="web_editor.css" />
     <script src="web_editor.js" defer></script>
-    <!--<script src="test.js" defer></script>-->
+    <script src="web_editor_init.js" defer></script>
+    <script>
+        window.addEventListener('load', () => {
+            let outputContainer = document.querySelector('.output div');
+            document.querySelector('.output button').addEventListener('click', function () {
+                try {
+                    outputContainer.innerHTML = webEditor.getHtml();
+                } catch (error) {
+                    console.error('Web editor is not initialized!');
+                }
+            });
+        });
+    </script>
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        .output {
+            margin-top: 10px;
+        }
+
+        .output > div {
+            margin-top: 10px;
+            outline: 2px solid blueviolet;
+        }
+    </style>
 </head>
 
 <body>
@@ -71,7 +97,7 @@
                             <option value="22">22</option>
                             <option value="24">24</option>
                             <option value="26">26</option>
-        
+
                         </select>
                     </div>
                     <div class="tools-panel">
@@ -107,63 +133,94 @@
                             <div class="color-select-btn" data-color="black" style="background-color: black" title="черный"></div>
                             <div class="color-select-btn" data-color="dimgray" style="background-color: dimgray" title="тускло-серый"></div>
                             <div class="color-select-btn" data-color="gray" style="background-color: gray" title="серый"></div>
-                            <div class="color-select-btn" data-color="lightgrey" style="background-color: lightgrey" title="светло-серый"></div>
+                            <div class="color-select-btn" data-color="lightgrey" style="background-color: lightgrey"
+                                title="светло-серый"></div>
                             <div class="color-select-btn" data-color="white" style="background-color: white" title="белый"></div>
                         </div>
                         <div class="column">
-                            <div class="color-select-btn" data-color="firebrick" style="background-color: firebrick" title="кирпичный"></div>
+                            <div class="color-select-btn" data-color="firebrick" style="background-color: firebrick"
+                                title="кирпичный"></div>
                             <div class="color-select-btn" data-color="darkred" style="background-color: darkred" title="темно-красный"></div>
                             <div class="color-select-btn" data-color="red" style="background-color: red" title="красный"></div>
                             <div class="color-select-btn" data-color="salmon" style="background-color: salmon" title="лососевый"></div>
-                            <div class="color-select-btn" data-color="mistyrose" style="background-color: mistyrose" title="туманно-розовый"></div>
+                            <div class="color-select-btn" data-color="mistyrose" style="background-color: mistyrose"
+                                title="туманно-розовый"></div>
                         </div>
                         <div class="column">
-                            <div class="color-select-btn" data-color="darkgreen" style="background-color: darkgreen" title="темно-зеленый"></div>
+                            <div class="color-select-btn" data-color="darkgreen" style="background-color: darkgreen"
+                                title="темно-зеленый"></div>
                             <div class="color-select-btn" data-color="green" style="background-color: green" title="зеленый"></div>
                             <div class="color-select-btn" data-color="lime" style="background-color: lime" title="лайма"></div>
-                            <div class="color-select-btn" data-color="palegreen" style="background-color: palegreen" title="бледно-зеленый"></div>
-                            <div class="color-select-btn" data-color="mintcream" style="background-color: mintcream" title="мятного крема"></div>
+                            <div class="color-select-btn" data-color="palegreen" style="background-color: palegreen"
+                                title="бледно-зеленый"></div>
+                            <div class="color-select-btn" data-color="mintcream" style="background-color: mintcream"
+                                title="мятного крема"></div>
                         </div>
                         <div class="column">
-                            <div class="color-select-btn" data-color="darkblue" style="background-color: darkblue" title="темно-синий"></div>
+                            <div class="color-select-btn" data-color="darkblue" style="background-color: darkblue"
+                                title="темно-синий"></div>
                             <div class="color-select-btn" data-color="blue" style="background-color: blue" title="голубой"></div>
-                            <div class="color-select-btn" data-color="royalblue" style="background-color: royalblue" title="королевский голубой"></div>
-                            <div class="color-select-btn" data-color="cornflowerblue" style="background-color: cornflowerblue" title="васильковый"></div>
-                            <div class="color-select-btn" data-color="lightsteelblue" style="background-color: lightsteelblue" title="светлый голубовато-стальной"></div>
+                            <div class="color-select-btn" data-color="royalblue" style="background-color: royalblue"
+                                title="королевский голубой"></div>
+                            <div class="color-select-btn" data-color="cornflowerblue" style="background-color: cornflowerblue"
+                                title="васильковый"></div>
+                            <div class="color-select-btn" data-color="lightsteelblue" style="background-color: lightsteelblue"
+                                title="светлый голубовато-стальной"></div>
                         </div>
                         <div class="column">
-                            <div class="color-select-btn" data-color="lightseagreen" style="background-color: lightseagreen" title="светлый морской волны"></div>
-                            <div class="color-select-btn" data-color="mediumturquoise" style="background-color: mediumturquoise" title="умеренный бирюзовый"></div>
-                            <div class="color-select-btn" data-color="turquoise" style="background-color: turquoise" title="бирюзовый"></div>
-                            <div class="color-select-btn" data-color="aquamarine " style="background-color: aquamarine" title="аквамариновый "></div>
-                            <div class="color-select-btn" data-color="paleturquoise" style="background-color: paleturquoise" title="бледно-бирюзовый"></div>
+                            <div class="color-select-btn" data-color="lightseagreen" style="background-color: lightseagreen"
+                                title="светлый морской волны"></div>
+                            <div class="color-select-btn" data-color="mediumturquoise" style="background-color: mediumturquoise"
+                                title="умеренный бирюзовый"></div>
+                            <div class="color-select-btn" data-color="turquoise" style="background-color: turquoise"
+                                title="бирюзовый"></div>
+                            <div class="color-select-btn" data-color="aquamarine " style="background-color: aquamarine"
+                                title="аквамариновый "></div>
+                            <div class="color-select-btn" data-color="paleturquoise" style="background-color: paleturquoise"
+                                title="бледно-бирюзовый"></div>
                         </div>
                         <div class="column">
-                            <div class="color-select-btn" data-color="deeppink" style="background-color: deeppink" title="насыщенный розовый"></div>
+                            <div class="color-select-btn" data-color="deeppink" style="background-color: deeppink"
+                                title="насыщенный розовый"></div>
                             <div class="color-select-btn" data-color="hotpink" style="background-color: hotpink" title="яркий розовый"></div>
-                            <div class="color-select-btn" data-color="lightpink" style="background-color: lightpink" title="светло-розовый"></div>
+                            <div class="color-select-btn" data-color="lightpink" style="background-color: lightpink"
+                                title="светло-розовый"></div>
                             <div class="color-select-btn" data-color="pink" style="background-color: pink" title="розовый"></div>
-                            <div class="color-select-btn" data-color="mistyrose" style="background-color: mistyrose" title="туманно-розовый"></div>
+                            <div class="color-select-btn" data-color="mistyrose" style="background-color: mistyrose"
+                                title="туманно-розовый"></div>
                         </div>
                         <div class="column">
                             <div class="color-select-btn" data-color="indigo" style="background-color: indigo" title="индиго"></div>
-                            <div class="color-select-btn" data-color="darkorchid" style="background-color: darkorchid" title="темно-лиловый"></div>
-                            <div class="color-select-btn" data-color="darkviolet" style="background-color: darkviolet" title="темно-фиолетовый"></div>
-                            <div class="color-select-btn" data-color="mediumorchid" style="background-color: mediumorchid" title="умеренный лиловый"></div>
+                            <div class="color-select-btn" data-color="darkorchid" style="background-color: darkorchid"
+                                title="темно-лиловый"></div>
+                            <div class="color-select-btn" data-color="darkviolet" style="background-color: darkviolet"
+                                title="темно-фиолетовый"></div>
+                            <div class="color-select-btn" data-color="mediumorchid" style="background-color: mediumorchid"
+                                title="умеренный лиловый"></div>
                             <div class="color-select-btn" data-color="thistle" style="background-color: thistle" title="чертополоха"></div>
                         </div>
                         <div class="column">
-                            <div class="color-select-btn" data-color="darkblue" style="background-color: darkblue" title=""></div>
-                            <div class="color-select-btn" data-color="darkblue" style="background-color: darkblue" title=""></div>
-                            <div class="color-select-btn" data-color="darkblue" style="background-color: darkblue" title=""></div>
-                            <div class="color-select-btn" data-color="darkblue" style="background-color: darkblue" title=""></div>
-                            <div class="color-select-btn" data-color="darkblue" style="background-color: darkblue" title=""></div>
+                            <div class="color-select-btn" data-color="darkblue" style="background-color: darkblue"
+                                title=""></div>
+                            <div class="color-select-btn" data-color="darkblue" style="background-color: darkblue"
+                                title=""></div>
+                            <div class="color-select-btn" data-color="darkblue" style="background-color: darkblue"
+                                title=""></div>
+                            <div class="color-select-btn" data-color="darkblue" style="background-color: darkblue"
+                                title=""></div>
+                            <div class="color-select-btn" data-color="darkblue" style="background-color: darkblue"
+                                title=""></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+    <hr>
+    <div class="output">
+        <button>Output</button>
+        <div></div>
+    </div>
 </body>
 
 </html>
